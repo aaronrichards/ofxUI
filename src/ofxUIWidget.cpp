@@ -526,6 +526,11 @@ void ofxUIWidget::setFont(ofxUIFont *_font)
     font = _font;
 }
 
+ofxUIFont& ofxUIWidget::getFont()
+{
+    return *font;
+}
+
 void ofxUIWidget::setVisible(bool _visible)
 {
     visible = _visible;
