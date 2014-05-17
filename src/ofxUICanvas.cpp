@@ -997,7 +997,7 @@ void ofxUICanvas::removeWidget(ofxUIWidget *widget)
     it=widgets_map.find(widget->getName());
     if(it != widgets_map.end())
     {
-        //            cout << "FOUND IT IN MAP, DELETING" << endl;
+         //          cout << "FOUND IT IN MAP, DELETING" << endl;
         widgets_map.erase(it);
     }
     
@@ -1043,7 +1043,7 @@ void ofxUICanvas::removeWidget(ofxUIWidget *widget)
     //	remove widget from lastAdded stack
     lastAddeds.erase( std::remove( lastAddeds.begin(), lastAddeds.end(), widget ), lastAddeds.end() );
     
-    delete widget;
+   // delete widget;
 }
 
 void ofxUICanvas::addWidget(ofxUIWidget *widget)
@@ -1069,9 +1069,9 @@ void ofxUICanvas::addWidget(ofxUIWidget *widget)
         setWidgetColor(label);
         
 #ifdef USE_FTGL
-		ofxFTGLSimpleLayout *f;
-		f = &label->ofxUIWidget::getFont();
-		f->setLineLength(rect->getWidth());
+//		ofxFTGLSimpleLayout *f;
+//		f = &label->ofxUIWidget::getFont();
+//		f->setLineLength(rect->getWidth());
 #endif
         
     }
@@ -3011,6 +3011,7 @@ void ofxUICanvas::removeWidget(string _name)
     if(w != NULL)
     {
         removeWidget(w);
+        delete w;
     }
 }
 
